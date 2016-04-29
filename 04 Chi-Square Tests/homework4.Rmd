@@ -18,19 +18,30 @@ Read in the homework4.csv data. For each of the following steps you
 should preface your R commands with some plain English explanation.
 -->
 
+The first step is to read in the data.
+```{r}
+dat<-read.csv("homework4.csv")
+```
 
 
 <!--
 Check the structure of the data.
 -->
+The next step is to check out the structure
 
-
+```{r}
+str(dat)
+```
+As we can see dat is a data frame with two variables: agreement and condition  .
 
 <!--
 Create a table that shows how many people fell into each category.
 -->
-
-
+Now I'll create a table that shows how many people fell into each
+category of agreement and condition.
+```{r}
+table(dat$agreement, dat$condition)
+```
 
 <!--
 Perform a chi-square test to determine whether or not the experimental
@@ -40,4 +51,11 @@ statement that supports your interpretation. As there's no way to
 insert the chi-square symbol, you can just use chi-square instead
 (see example4.Rmd).
 -->
+To determine if the data support the appearance of a relationship
+between agreement and condition, I performed a chi-square test.
 
+```{r}
+chisq.test(dat$agreement,dat$condition)
+```
+According to the results of the chi-square test, agreement and condition
+are independent of one another Chi-square(1) = 1.2, p = .26.
