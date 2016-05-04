@@ -70,7 +70,7 @@ t.test(dat$wpm[dat$music=="metal"],
 ```
 Examining the results of our t-test we can see that individuals in
 the metal group performed with more wpm than individuals
-in the no music group, t(62) = 2.33, p = .0115
+in the no music group, t(62) = 2.33, p = .012
 
 <!--
 Create a bar graph of the data.
